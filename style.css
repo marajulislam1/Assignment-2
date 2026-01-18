@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.inter-font{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+
+:root{
+    --bg-primary: #1A0B2E;
+    --bg-secondery: #230E3D;
+    --btn-primary-bg: linear-gradient(to top right, #F7E93F, #FB09B4, #9100F8);
+    --btn-primary-color: #FFFFFF;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Shared style */
+.display-flex{
+    display: flex;
+}
+.primary-btn{
+    background: var(--btn-primary-bg);
+    padding: 12px 20px;
+    border-radius: 26px;
+    border: none;
+    color: var(--btn-primary-color);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* spacific style */
+ header{
+    max-width: 1600px;
+    margin: 0 auto;
+ }
+.navbar{
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--bg-primary);
+    color: white;
+}
+.navbar .brand-logo{
+    font-size: 2rem;
+}
+.navbar .brand-spacial{
+    background:  linear-gradient(to top right, #F7E93F, #FB09B4, #9100F8);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.navbar ul{
+    list-style: none;
+    gap: 32px;
+    margin-block: 36.5px;
+}
+.navbar ul .link{
+    text-decoration: none; 
+    color: #FFFFFF;   
+    font-weight: 500;
+}
+.navbar .btn-subscribe{
+    padding-right: 16px;
+}
+.navbar .hamburger{
+    display: none;
+}
+
+/* Small device */
+@media screen and (max-width: 576px) {
+    .navbar ul .link,
+    .btn-subscribe
+    {
+        display: none;
+    }
+    .navbar .hamburger{
+        display: block;
+    }
+}
