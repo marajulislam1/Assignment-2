@@ -7,6 +7,7 @@
 
 :root{
     --text-primar: #FFFFFF;
+    --text-secondery: rgba(255, 255, 255, 0.6);
     --bg-primary: #1A0B2E;
     --bg-secondery: #230E3D;
     --btn-primary-bg: linear-gradient(to top right, #F7E93F, #FB09B4, #9100F8);
@@ -33,10 +34,20 @@
     font-weight: 700;
     cursor: pointer;
 }
+.section-title{
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text-primar);
+}
+.section-description{
+    font-size: 16px;
+    color: var(--text-secondery);
+    line-height: 1.5;
+}
 
 
 /* spacific style */
- header{
+ header, main{
     max-width: 1600px;
     margin: 0 auto;
  }
@@ -84,6 +95,15 @@
 .banner-container .banner .banner-media{
     position: relative;
 }
+.banner .banner-media #banner-badge{
+    padding: 8px 16px;
+    border-radius: 20px;
+    position: absolute;
+    top: 20%;
+    right: 60%;
+    background-color: #00FF88;
+    box-shadow: 0px 0px 3px 5px #00FF88;
+}
 .banner .banner-media .banner-micro{
     position: absolute;
     top: 50%;
@@ -103,9 +123,6 @@
 .banner .banner-content .banner-description{
     color: var(--text-primar);
     margin-bottom: 24px;
-}
-.banner .banner-content #btn-spotify{
-
 }
 .fa-spotify{
     width: 20px;
@@ -129,8 +146,47 @@
     text-align: center;
 }
 
-
-
+/* About podcast related style */
+.about-container{
+    background-color: var(--bg-primary);
+}
+.about-content .about-title{
+    padding-bottom: 10px;
+}
+.about-container .about-content{
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.about-container hr{
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 1px;
+    border: none;
+    margin-block: 80px;
+}
+.about-container .stats-container{
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    gap: clamp(40px, 5vw, 95px);
+}
+.stats-container .stats{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.stats-container .stats .stats-value{
+    font-size: 3rem;
+    font-weight: 900;
+    color: #00FF88;
+    margin-bottom: 16px;
+}
+.stats-container .stats .stats-description{
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.25;
+}
  
 
 
@@ -147,4 +203,10 @@
     .navbar .hamburger{
         display: block;
     }
+
+    /* Stats section responsive */
+    .about-container .stats-container{
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(20px, 5vw, 95px);
+}
 }
