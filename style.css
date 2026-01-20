@@ -243,8 +243,48 @@ body{
     margin-bottom: 16px;
 }
 
-/* Episode related style */
+ /* Episode related style */
+.episode-section{
+    margin-block: 120px;
+}
+.episode-section .episode-heading{
+    margin: 0 auto 40px;
+    text-align: center;
+    max-width: 1200px;
+}
+.episode-section .episode-container{
+    max-width: 1200px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2vw, 30px);
+    
+}
+.episode-container .episode{
+    background-color: var(--bg-surface);
+    border-radius: 30px;
+}
+.episode-container .episode iframe{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+}
+.episode-container .episode .episode-content{
+    padding: clamp(16px, 1.6vw, 24px );
+}
 
+.episode .episode-content .episode-description{
+    margin-block: clamp(8px, .8vw, 12px);
+}
+.episode-content .episode-duration{
+    color: #00FF88;
+    font-weight: 600;
+}
+.episode-content .episode-duration img{
+    margin-right: 6px;
+}
+
+ 
 
 
 
@@ -281,6 +321,14 @@ body{
             "rich"
         ; 
     }
+
+    /* Episode section responsive */
+    .episode-section .episode-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .episode-section{
+    margin-block: 40px 60px;
+}
 }
 
 /* medium device */
@@ -295,6 +343,14 @@ body{
             "global exclusive"
             "rich rich"
         ; 
+    }
+
+    /* episode section responsive */
+    .episode-section .episode-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .episode-section{
+        margin-block: 50px 70px;
     }
     
 }
