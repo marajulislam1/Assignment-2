@@ -284,6 +284,46 @@ body{
     margin-right: 6px;
 }
 
+/* Host section style start*/
+.host-section{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.host-section .host-heading{
+    text-align: center;
+}
+.host-section .host-container{
+    display: flex;
+    gap: clamp(16px, 1.6vw, 24px );
+    justify-content: center;
+    align-items: center;
+    border-radius: clamp(24px, 2.6vw, 40px);
+    padding: clamp(24px, 2.6vw, 40px);
+    margin-top: clamp(24px, 2.6vw, 40px);
+    background-color: var(--bg-surface);
+}
+.host-section .host-container #host-name{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-primar);
+}
+.host-section .host-container #host-bio{
+    padding-block: 16px;
+}
+.host-container .host-social{
+    display: flex;
+    align-items: center;
+}
+.host-container .host-social span{
+    padding: 10px;
+    border: 2px solid #533c72;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.host-social span img{
+    position: relative;
+    top: 3px;
+}
  
 
 
@@ -327,8 +367,21 @@ body{
         grid-template-columns: repeat(1, 1fr);
     }
     .episode-section{
-    margin-block: 40px 60px;
-}
+        margin-block: 40px 60px;
+    }
+
+    /* host section responsive */
+    .host-section .host-container{
+      flex-direction: column;
+ 
+    }
+    #host-bio,
+    #host-name{
+        text-align: center;
+    }
+    .host-social{
+        justify-content: center;
+    }
 }
 
 /* medium device */
