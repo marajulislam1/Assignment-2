@@ -10,6 +10,7 @@
     --text-secondery: rgba(255, 255, 255, 0.6);
     --bg-primary: #1A0B2E;
     --bg-secondery: #230E3D;
+    --bg-surface: #2a0f4d;
     --btn-primary-bg: linear-gradient(to top right, #F7E93F, #FB09B4, #9100F8);
     --btn-primary-color: #FFFFFF;
 }
@@ -39,6 +40,11 @@
     font-weight: bold;
     color: var(--text-primar);
 }
+.sub-section-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-primar);
+}
 .section-description{
     font-size: 16px;
     color: var(--text-secondery);
@@ -47,6 +53,9 @@
 
 
 /* spacific style */
+body{
+    background-color: var(--bg-primary);
+}
  header, main{
     max-width: 1600px;
     margin: 0 auto;
@@ -187,7 +196,54 @@
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.25;
 }
- 
+
+/* whey choose related style */
+.choose-container{
+    background-color: var(--bg-secondery);
+    padding-block: 120px 120px;
+}
+.choose-container #choose-heading{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.why-choose-grid{
+    display: grid;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "audio     mobile      mobile"
+        "audio     global      global"
+        "exclusive exclusive   rich"
+    ; 
+    gap: clamp(16px, 4vw, 80px);
+}
+.premium-audio{
+    grid-area: audio;
+}
+.mobile-friendly{
+    grid-area: mobile;
+}
+.global-comm{
+    grid-area: global;
+}
+.exclusive-inter{
+    grid-area: exclusive;
+}
+.rich-reso{
+    grid-area: rich;
+}
+.rich-reso, .exclusive-inter,.global-comm, .mobile-friendly, .premium-audio{
+    background-color: var(--bg-surface);
+    padding: clamp(24px, 2.6vw, 40px );
+    border-radius: clamp(24px, 2.6vw, 40px);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.why-choose-grid img{
+    margin-bottom: 16px;
+}
+
+/* Episode related style */
 
 
 
@@ -208,5 +264,37 @@
     .about-container .stats-container{
     grid-template-columns: repeat(2, 1fr);
     gap: clamp(20px, 5vw, 95px);
+    }
+
+    /* choose section responsive */
+    
+    .choose-container{
+        padding-block:  40px 40px;
+    }
+    .why-choose-grid{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: 
+            "audio"
+            "mobile"
+            "global"
+            "exclusive"
+            "rich"
+        ; 
+    }
 }
+
+/* medium device */
+@media screen and (min-width: 576px) and (max-width: 992px){
+    .choose-container{
+        padding-block:  60px 60px;
+    }
+    .why-choose-grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "audio mobile"
+            "global exclusive"
+            "rich rich"
+        ; 
+    }
+    
 }
