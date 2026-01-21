@@ -95,7 +95,7 @@ body{
 .banner-container{
     background-image: url(./assets/hero-bg.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
 }
 .banner-container .banner{
@@ -104,12 +104,16 @@ body{
 .banner-container .banner .banner-media{
     position: relative;
 }
+ 
 .banner .banner-media #banner-badge{
     padding: 8px 16px;
     border-radius: 20px;
     position: absolute;
-    top: 20%;
-    right: 60%;
+    top: 14%;
+    right: 38%;
+    color: var(--bg-primary);
+    font-size: 18px;
+    font-weight: 600;
     background-color: #00FF88;
     box-shadow: 0px 0px 3px 5px #00FF88;
 }
@@ -153,6 +157,21 @@ body{
     padding-right: 8px;
     color: #00FF88;
     text-align: center;
+    animation: bounce-paper-plane 5s infinite;
+}
+@keyframes bounce-paper-plane{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.fa-paper-plane{
+    
 }
 
 /* About podcast related style */
@@ -371,8 +390,6 @@ body{
 }
 
 
-
-
 /* Small device */
 @media screen and (max-width: 576px) {
     .navbar ul .link,
@@ -382,6 +399,9 @@ body{
     }
     .navbar .hamburger{
         display: block;
+    }
+    .banner .banner-media #banner-badge{
+        right: 10%;
     }
 
     /* Stats section responsive */ 
@@ -454,6 +474,11 @@ body{
 
 /* medium device */
 @media screen and (min-width: 576px) and (max-width: 992px){
+    /* banner-badge */
+    .banner .banner-media #banner-badge{
+        right: 28%;
+    }
+    /* choose section responsive */
     .choose-container{
         padding-block:  60px 60px;
     }
