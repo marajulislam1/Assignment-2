@@ -56,7 +56,7 @@
 body{
     background-color: var(--bg-primary);
 }
- header, main{
+ header, main,.footer{
     max-width: 1600px;
     margin: 0 auto;
  }
@@ -69,7 +69,7 @@ body{
 .navbar .brand-logo{
     font-size: 2rem;
 }
-.navbar .brand-spacial{
+.brand-spacial{
     background:  linear-gradient(to top right, #F7E93F, #FB09B4, #9100F8);
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -95,7 +95,7 @@ body{
 .banner-container{
     background-image: url(./assets/hero-bg.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
 }
 .banner-container .banner{
@@ -180,7 +180,6 @@ body{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin: 0 auto;
-    gap: clamp(40px, 5vw, 95px);
 }
 .stats-container .stats{
     text-align: center;
@@ -216,7 +215,7 @@ body{
         "audio     global      global"
         "exclusive exclusive   rich"
     ; 
-    gap: clamp(16px, 4vw, 80px);
+    gap: 80px;
 }
 .premium-audio{
     grid-area: audio;
@@ -235,8 +234,8 @@ body{
 }
 .rich-reso, .exclusive-inter,.global-comm, .mobile-friendly, .premium-audio{
     background-color: var(--bg-surface);
-    padding: clamp(24px, 2.6vw, 40px );
-    border-radius: clamp(24px, 2.6vw, 40px);
+    padding: 40px;
+    border-radius: 40px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .why-choose-grid img{
@@ -246,6 +245,7 @@ body{
  /* Episode related style */
 .episode-section{
     margin-block: 120px;
+    background-color: var(--bg-primary);
 }
 .episode-section .episode-heading{
     margin: 0 auto 40px;
@@ -257,7 +257,7 @@ body{
     margin-inline: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(16px, 2vw, 30px);
+    gap: 30px;
     
 }
 .episode-container .episode{
@@ -270,11 +270,11 @@ body{
     aspect-ratio: 16/9;
 }
 .episode-container .episode .episode-content{
-    padding: clamp(16px, 1.6vw, 24px );
+    padding: 24px;
 }
 
 .episode .episode-content .episode-description{
-    margin-block: clamp(8px, .8vw, 12px);
+    margin-block: 12px;
 }
 .episode-content .episode-duration{
     color: #00FF88;
@@ -288,6 +288,7 @@ body{
 .host-section{
     max-width: 1200px;
     margin: 0 auto;
+    margin-bottom: 120px;
 }
 .host-section .host-heading{
     text-align: center;
@@ -324,7 +325,50 @@ body{
     position: relative;
     top: 3px;
 }
+
+/* Footer related style start */
+.footer-section{
+    padding-block: 120px;
+    text-align: center;
+    background-image: url(./assets/footer-bg.png);
+    background-repeat: no-repeat;
+    background-size:    cover;
+    background-position: center;
+}
+.footer-section #footer-brand{
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primar);
+}
+.footer-section .social-container{
+    display: flex;
+    justify-content: center;
+    gap: clamp(16px, 2.6vw, 40px);
+    margin-block: 32px;
+    flex-wrap: wrap;
+
+}
+.footer-section .social-container .social {
+    display: flex;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+    gap: 8px;
+    cursor: pointer;
+}
  
+/* Ai code */
+.footer {
+  background-image: url("./assets/footer-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 20px;
+}
+
+.footer-content {
+  text-align: center;
+  color: #fff;
+}
 
 
 
@@ -340,7 +384,7 @@ body{
         display: block;
     }
 
-    /* Stats section responsive */
+    /* Stats section responsive */ 
     .about-container .stats-container{
     grid-template-columns: repeat(2, 1fr);
     gap: clamp(20px, 5vw, 95px);
@@ -360,17 +404,32 @@ body{
             "exclusive"
             "rich"
         ; 
+        gap: 16px;
+    }
+    .rich-reso, .exclusive-inter,.global-comm, .mobile-friendly, .premium-audio{
+        padding: 24px;
+        border-radius: 24px;
     }
 
     /* Episode section responsive */
     .episode-section .episode-container{
         grid-template-columns: repeat(1, 1fr);
+        gap: 16px;
     }
     .episode-section{
         margin-block: 40px 60px;
     }
+    .episode-container .episode .episode-content{
+        padding: 16px;
+    }
+    .episode .episode-content .episode-description{
+        margin-block: 8px;
+    }
 
     /* host section responsive */
+    .host-section{
+        margin-bottom: 40px;
+        }
     .host-section .host-container{
       flex-direction: column;
  
@@ -381,6 +440,15 @@ body{
     }
     .host-social{
         justify-content: center;
+    }
+
+    /* Footer section responsive */
+    .footer-section{
+        padding-block: 40px;
+        padding-block: 0px;
+    }
+    .footer-section .social-container{
+        margin-block: 24px;
     }
 }
 
@@ -396,6 +464,7 @@ body{
             "global exclusive"
             "rich rich"
         ; 
+        gap: 24px;
     }
 
     /* episode section responsive */
@@ -405,5 +474,10 @@ body{
     .episode-section{
         margin-block: 50px 70px;
     }
+
+    /* host section responsive */
+        .host-section{
+            margin-bottom: 60px;
+        }
     
 }
